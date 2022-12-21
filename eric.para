@@ -25,6 +25,7 @@ AGE_RANGE  0.,13.e9                                     # Age Min-Max in yr
 ########### Run : $ZPHOTDIR/source/filter  -c zphot.para                         #############
 ##############################################################################################
 # 
+FILTER_REP   $LEPHAREDIR/filt           # Repository in which the filters are stored
 FILTER_LIST  cosmos/u_cfht.lowres,cosmos/B_subaru.lowres,cosmos/V_subaru.lowres,cosmos/r_subaru.lowres,cosmos/i_subaru.lowres,cosmos/suprime_FDCCD_z.res,hsc/yHSC.pb,vista/Y.lowres,vista/J.lowres,vista/H.lowres,vista/K.lowres,cosmos/H_wircam.lowres,cosmos/K_wircam.lowres,cosmos/IB427.lowres,cosmos/IB464.lowres,cosmos/IB484.lowres,cosmos/IB505.lowres,cosmos/IB527.lowres,cosmos/IB574.lowres,cosmos/IB624.lowres,cosmos/IB679.lowres,cosmos/IB709.lowres,cosmos/IB738.lowres,cosmos/IB767.lowres,cosmos/IB827.lowres,cosmos/NB711.lowres,cosmos/NB816.lowres,cosmos/irac_ch1.lowres,cosmos/irac_ch2.lowres,cosmos/irac_ch3.lowres,cosmos/irac_ch4.lowres,galex/NUV.lowres,galex/F1600.pb,cfht/u_megaprime_sagem.res,cfht/g_megaprime_sagem.res,cfht/r_megaprime_sagem.res,cfht/i_megaprime_sagem.res,cfht/iMegaNew.fil,cfht/z_megaprime_sagem.res
 TRANS_TYPE	 1			# TRANSMISSION TYPE
                                         # 0[-def]: Energy, 1: Nb of photons
@@ -55,12 +56,12 @@ GAL_LIB_OUT	CE_SCOSMOS	# Output GALAXY LIBRARY  (-> $ZPHOTWORK/lib_mag/*)
 #
 #------------------   MAG + Z_STEP + COSMO + EXTINCTION   -----------------------------
 MAGTYPE         AB		# Magnitude type (AB or VEGA)
-Z_STEP 		0.01,6.0,0.04 	# dz, zmax, dz   (if zmax>6) 
+Z_STEP 		0.01,0.01,6.00	# dz, zmin, zmax #0.01,6.00,0.04 	# dz, zmax, dz   (if zmax>6) 
 COSMOLOGY	70,0.3,0.7	# H0,om0,lbd0    (if lb0>0->om0+lbd0=1)
 MOD_EXTINC 	0,0		# model range for extinction 
 EXTINC_LAW	SB_calzetti.dat	# ext. law (in  $ZPHOTDIR/ext/*)
 EB_V            0.,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.5 # E(B-V) (<50 values)
-EM_LINES        EMP             # [NO/EMP/PHYS] choice between emission line prescription  
+EM_LINES        EMP_UV		# EMP             # [NO/EMP/PHYS] choice between emission line prescription  
 ##Z_FORM 	8,6,4,3 	# Zformation for each SED
 #
 #------------------     ASCII OUTPUT FILES OPTION       -------------------------------
@@ -87,7 +88,7 @@ ERR_FACTOR      1.
 #
 #------------------    Theoretical libraries           --------------------------------
 ZPHOTLIB	CE_SCOSMOS,STAR_SCOSMOS,QSO_SCOSMOS  # Library used for Chi2 (max:3)
-ADD_EMLINES     YES 
+ADD_EMLINES     0,10000          # Range of template in which we add emission lines #YES 
 #
 #------------------     Output catalog Name           ---------------------------------
 CAT_OUT		eric.out 	# Output catalog  (-> working directory) 
@@ -144,7 +145,7 @@ MABS_REF	11		 # 0[-def]: filter obs chosen for Mabs :
 				 # ONLY USED IF MABS_METHOD=2
 MABS_FILT       1,2,3,4   	 # Chosen filters per redshift bin (MABS_ZBIN)
 				 # ONLY USED IF MABS_METHOD=4 
-MABS_ZBIN       0,0.5,1,1.5,2,3,3.5,4 # Redshift bins (even number) 
+MABS_ZBIN       0,0.5,2,4,6      # Redshift bins corresponding to MABS_FILT (1st bin 0,0.5, second 0.5,2 ...) #1,1.5,2,3,3.5,4 # Redshift bins (even number) 
 				 # ONLY USED IF MABS_METHOD=4
 RF_COLORS       32,4,4,13
 

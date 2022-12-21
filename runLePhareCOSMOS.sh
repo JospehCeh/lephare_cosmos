@@ -43,7 +43,7 @@ $LEPHAREDIR/source/sedtolib -t S -c eric.para
 ## use the galaxy templates + filters to derive a library of predicted magnitudes and store it in `$LEPHAREWORK/lib_mag` (the parameters correspond to enabling emission lines correlated to UV light + free factor in scaling these lines, mo$
 echo "Magnitudes"
 $LEPHAREDIR/source/mag_gal -t G -c eric.para
-$LEPHAREDIR/source/mag_star -c eric.para
+$LEPHAREDIR/source/mag_gal -t S -c eric.para
 
 ## finally proceed to photometric redshift estimation
 echo "Estimation"
@@ -52,7 +52,7 @@ echo "Estimation"
 #$LEPHAREDIR/source/zphota -c LSST.para -CAT_IN train_DC2_VALID_CAT_IN.in -CAT_TYPE LONG -CAT_OUT train_zphot_long.out -AUTO_ADAPT YES
 
 #$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_short.out -ZPHOTLIB VISTA_COSMOS_FREE,ALLSTAR_COSMOS,QSO_COSMOS -AUTO_ADAPT YES
-$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_short.out -ZPHOTLIB VISTA_COSMOS_FREE,ALLSTAR_COSMOS -AUTO_ADAPT YES
+$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_short.out -ZPHOTLIB CE_SCOSMOS,STAR_SCOSMOS -AUTO_ADAPT YES
 
 ## a python script is available to perform a quick diagnostics
 echo "Plots"
