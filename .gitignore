@@ -1,1 +1,9 @@
 COSMOS2020.R1_v2.1/
+CFHTLS_230506/
+cosmos_setmeup.zsh
+figures*.pdf
+filt/
+lib_bin/
+lib_mag/
+zphot_*.out
+cosmos2020-readcat/
