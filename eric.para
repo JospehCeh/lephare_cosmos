@@ -56,7 +56,7 @@ GAL_LIB_OUT	CE_SCOSMOS	# Output GALAXY LIBRARY  (-> $ZPHOTWORK/lib_mag/*)
 #
 #------------------   MAG + Z_STEP + COSMO + EXTINCTION   -----------------------------
 MAGTYPE         AB		# Magnitude type (AB or VEGA)
-Z_STEP 		0.01,0.01,6.00	# dz, zmin, zmax #0.01,6.00,0.04 	# dz, zmax, dz   (if zmax>6) 
+Z_STEP 		0.04,0.,6.	# dz, zmin, zmax #0.01,6.00,0.04 	# dz, zmax, dz   (if zmax>6) 
 COSMOLOGY	70,0.3,0.7	# H0,om0,lbd0    (if lb0>0->om0+lbd0=1)
 MOD_EXTINC 	0,0		# model range for extinction 
 EXTINC_LAW	SB_calzetti.dat	# ext. law (in  $ZPHOTDIR/ext/*)
