@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 if [ -z "${LEPHAREDIR+x}" ]; then
     export LEPHAREDIR="${PWD%/*}/LEPHARE"
@@ -10,6 +10,10 @@ if [ -z "${OMP_NUM_THREADS+x}" ]; then
     export OMP_NUM_THREADS='10'
 fi
 
+
+if [ -z "${SEDFORS2DIR+x}" ]; then
+    export SEDFORS2DIR="${LEPHAREWORK}/../fors2_templates/KmeanClus_PCA"
+fi
 
 export CAT_FILE_IN="${LEPHAREDIR}/examples/COSMOS.in"
 if [ -z "${CAT_FILE_IN+x}" ]; then
@@ -51,6 +55,12 @@ $LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_CWW -GAL_LIB_OUT C
 #$LEPHAREDIR/source/sedtolib -t G -c eric.para
 #$LEPHAREDIR/source/sedtolib -t S -c eric.para
 
+#GAL FORS2
+echo "FORS2-derived templates"
+$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_AVG_FORS2_normed.list -GAL_LIB LIB_FORS2_NORM
+#$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2 -GAL_LIB_OUT FORS2_SCOSMOS -MOD_EXTINC 1,30,1,30 -EXTINC_LAW SMC_prevot.dat,SB_calzetti.dat -EM_LINES EMP_UV -Z_STEP 0.04,0.,6. -LIB_ASCII YES
+$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_NORM -GAL_LIB_OUT FORS2_SCOSMOS_NORM -EM_LINES EMP_UV -LIB_ASCII YES
+
 #GAL VISTA
 echo "VISTA templates"
 $LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED $LEPHAREDIR/sed/GAL/COSMOS_SED/COSMOS_MOD.list  -GAL_LIB LIB_VISTA 
@@ -87,8 +97,14 @@ $LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED $LEPHAREDIR/sed/GAL/DALE/
 ###################################################
 
 ## finally proceed to photometric redshift estimation
+#echo "Estimation"
+#$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN"  -CAT_OUT zphot_vista_adapt.out -ZPHOTLIB CWW_SCOSMOS,VISTA_SCOSMOS,ALLSTAR_SCOSMOS,QSO_SCOSMOS,BC03_SCOSMOS  -ADD_EMLINES 0,100 -AUTO_ADAPT YES  -EM_DISPERSION 50,5 -INP_TYPE F
+
 echo "Estimation"
-$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN"  -CAT_OUT zphot_vista_adapt.out -ZPHOTLIB CWW_SCOSMOS,VISTA_SCOSMOS,ALLSTAR_SCOSMOS,QSO_SCOSMOS,BC03_SCOSMOS  -ADD_EMLINES 0,100 -AUTO_ADAPT YES  -EM_DISPERSION 50,5 -INP_TYPE F
+$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN"  -CAT_OUT zphot_vista_adapt_fors2_normed.out -ZPHOTLIB FORS2_SCOSMOS_NORM,ALLSTAR_SCOSMOS,QSO_SCOSMOS  -ADD_EMLINES 1,30 -AUTO_ADAPT YES  -EM_DISPERSION 50,5 -INP_TYPE F
+
+#echo "Estimation"
+#$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN"  -CAT_OUT zphot_vista_adapt_noBC03.out -ZPHOTLIB CWW_SCOSMOS,VISTA_SCOSMOS,ALLSTAR_SCOSMOS,QSO_SCOSMOS  -ADD_EMLINES 0,100 -AUTO_ADAPT YES  -EM_DISPERSION 50,5 -INP_TYPE F
 
 #$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_TYPE LONG -CAT_OUT zphot_long.out -AUTO_ADAPT YES
 #$LEPHAREDIR/source/zphota -c LSST_specId.para -CAT_IN "$CAT_FILE_IN" -CAT_TYPE LONG -CAT_OUT zphot_long_specId.out -AUTO_ADAPT YES
@@ -99,5 +115,7 @@ $LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN"  -CAT_OUT zphot_vi
 
 ## a python script is available to perform a quick diagnostics
 echo "Plots"
-python figuresLPZ.py zphot_vista_adapt.out
+#python figuresLPZ.py zphot_vista_adapt.out
+python figuresLPZ.py zphot_vista_adapt_fors2_normed.out
+#python figuresLPZ.py zphot_vista_adapt_noBC03.out
 #python figuresLPZ.py train_zphot_long.out
