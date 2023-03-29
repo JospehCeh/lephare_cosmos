@@ -81,11 +81,29 @@ echo "FORS2-derived templates"
 #$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v1_normed.list -GAL_LIB LIB_FORS2_SL_ColorSelectV1N
 #$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV1N -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV1N_CALetPREV -MOD_EXTINC 0,32,0,32 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
 
-$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v2.list -GAL_LIB LIB_FORS2_SL_ColorSelectV2
-$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV2 -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV2_CALetPREV -MOD_EXTINC 0,74,0,74 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
+#$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v2.list -GAL_LIB LIB_FORS2_SL_ColorSelectV2
+#$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV2 -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV2_CALetPREV -MOD_EXTINC 0,74,0,74 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
 
-$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v2_normed.list -GAL_LIB LIB_FORS2_SL_ColorSelectV2N
-$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV2N -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV2N_CALetPREV -MOD_EXTINC 0,74,0,74 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
+#$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v2_normed.list -GAL_LIB LIB_FORS2_SL_ColorSelectV2N
+#$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV2N -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV2N_CALetPREV -MOD_EXTINC 0,74,0,74 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
+
+#$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_KinCalClus_SL_v4.list -GAL_LIB LIB_FORS2_SL_KinCalV4
+#$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_KinCalV4 -GAL_LIB_OUT LIB_FORS2_SL_KinCalV4_CALetPREV -MOD_EXTINC 0,38,0,38 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
+
+#$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_KinCalClus_SL_v4_normed.list -GAL_LIB LIB_FORS2_SL_KinCalV4N
+#$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_KinCalV4N -GAL_LIB_OUT LIB_FORS2_SL_KinCalV4N_CALetPREV -MOD_EXTINC 0,38,0,38 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
+
+#$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v3.list -GAL_LIB LIB_FORS2_SL_ColorSelectV3
+#$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV3 -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV3_CALetPREV -MOD_EXTINC 0,46,0,46 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
+
+#$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v3_normed.list -GAL_LIB LIB_FORS2_SL_ColorSelectV3N
+#$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV3N -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV3N_CALetPREV -MOD_EXTINC 0,46,0,46 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
+
+$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v4.list -GAL_LIB LIB_FORS2_SL_ColorSelectV4
+$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV4 -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV4_CALetPREV -MOD_EXTINC 0,74,0,74 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
+
+$LEPHAREDIR/source/sedtolib -c eric.para -t G -GAL_SED ${LEPHAREWORK}/SED_FORS2_ColorSelect_SL_v4_normed.list -GAL_LIB LIB_FORS2_SL_ColorSelectV4N
+$LEPHAREDIR/source/mag_gal  -c eric.para -t G -GAL_LIB_IN LIB_FORS2_SL_ColorSelectV4N -GAL_LIB_OUT LIB_FORS2_SL_ColorSelectV4N_CALetPREV -MOD_EXTINC 0,74,0,74 -EXTINC_LAW SB_calzetti.dat,SMC_prevot.dat
 
 
 #GAL VISTA
@@ -139,9 +157,21 @@ echo "Estimation"
 
 #$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV1_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV1_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,32 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
 
-$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV2_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV2_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,74 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
+#$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV2_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV2_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,74 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
 
-$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV2N_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV2N_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,74 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
+#$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV2N_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV2N_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,74 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
+
+#$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_KinCalClusV4_prevEtCal.out -ZPHOTLIB LIB_FORS2_SL_KinCalV4_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,38 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
+
+#$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_KinCalClusV4N_prevEtCal.out -ZPHOTLIB LIB_FORS2_SL_KinCalV4N_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,38 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
+
+#$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV3_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV3_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,46 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
+
+#$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV3N_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV3N_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,46 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
+
+$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV4_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV4_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,74 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
+
+$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN" -CAT_OUT zphot_fors2SL_ColorSelectV4N_calEtPrev.out -ZPHOTLIB LIB_FORS2_SL_ColorSelectV4N_CALetPREV,ALLSTAR_SCOSMOS,QSO_SCOSMOS -ADD_EMLINES 0,74 -AUTO_ADAPT YES -EM_DISPERSION 50,5 -INP_TYPE F
 
 #echo "Estimation"
 #$LEPHAREDIR/source/zphota -c eric.para -CAT_IN "$CAT_FILE_IN"  -CAT_OUT zphot_outliers_ref.out -ZPHOTLIB CWW_SCOSMOS,VISTA_SCOSMOS,ALLSTAR_SCOSMOS,QSO_SCOSMOS  -ADD_EMLINES 0,100 -AUTO_ADAPT YES  -EM_DISPERSION 50,5 -INP_TYPE F -SPEC_OUT YES
