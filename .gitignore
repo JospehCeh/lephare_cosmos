@@ -1,0 +1,12 @@
+COSMOS2020.R1_v2.1/
+CFHTLS_230506/
+cosmos_setmeup.zsh
+figures*.pdf
+filt/
+lib_bin/
+lib_mag/
+zphot_*.out
+2020-05-28_eric_commands_full_cosmos.dat
+cosmos_laigle.in
+eric_commands_cosmos.dat
+.ipynb_checkpoints/
